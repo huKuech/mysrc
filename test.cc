@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 int main()
@@ -5,8 +6,8 @@ int main()
 	printf("Hello You!");
 
 	int i_MyVariable1;
-	int i_MyVariable2;
-	int i_MyVariable3;
+	int i_MyVariable2 = 30;
+	int i_MyVariable3 = 20;
 
 	// i_MyVariable1
 

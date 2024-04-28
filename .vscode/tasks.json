@@ -2,27 +2,36 @@
 	// See https://go.microsoft.com/fwlink/?LinkId=733558
 	// for the documentation aboutthe tasks.json format
 	"version": "2.0.0",
+	"inputs": [
+		{
+			"type": "promptString",
+			"id": "Age",
+			"default": "-1",
+			"description": "Enter your age"
+		},
+		{
+			"type": "pickString",
+			"id": "mode",
+			"options": [
+				"Mode 1",
+				"Mode 2"
+			],
+			"default": "Mode 1",
+			"description": "Enter the mode"
+		}
+	],
 	"tasks": [
 		{
-			"label": "echo",
+			"label": "Python: Run Application",
 			"type": "shell",
-			"command": "echo Hello World",
+			"command": "python",
 			"group": "build",
-			"problemMatcher": []
-		},
-		{
-			"label": "Run Python File",
-			"type": "shell",
-			"command": "python ${workspaceFolder}/test.py",
-			"group": "build",
-			"problemMatcher": []
-		},
-		{
-			"label": "Run Active Python File",
-			"type": "shell",
-			"command": "python ${file}",
-			"group": "build",
-			"problemMatcher": []
+			"problemMatcher": [],
+			"args": [
+				"${workspaceFolder}/test.py",
+				"${input:Age}",
+				"${input:mode}"
+			]
 		}
 	]
 }

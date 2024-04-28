@@ -1,6 +1,9 @@
-print("Hello You")
+import sys
 
-i = 2
-j = i * 2
+argc = len(sys.argv)
+argv = sys.argv
 
-print(j)
+print(f"argc: {argc}")
+print(f"argv: {argv}")
+
+print(f"Your age is {argv[1]}")
